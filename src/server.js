@@ -21,7 +21,7 @@ const server = http.createServer(app);
 // CORS configuration
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://jeevansaar.vercel.app', 'https://www.jeevansaar.vercel.app']
+    ? ['https://jeevansaar-frontend.vercel.app', 'https://www.jeevansaar-frontend.vercel.app']
     : 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
