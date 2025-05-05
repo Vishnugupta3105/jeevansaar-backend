@@ -12,7 +12,7 @@ dotenv.config();
 console.log('Environment variables loaded:', {
   PORT: process.env.PORT,
   NODE_ENV: process.env.NODE_ENV,
-  HAS_OPENAI_KEY: !!process.env.OPENAI_API_KEY
+  HAS_TOGETHER_KEY: !!process.env.TOGETHER_API_KEY
 });
 
 const app = express();
@@ -42,7 +42,7 @@ app.get('/health', (req, res) => {
     env: {
       PORT: process.env.PORT,
       NODE_ENV: process.env.NODE_ENV,
-      HAS_OPENAI_KEY: !!process.env.OPENAI_API_KEY
+      HAS_TOGETHER_KEY: !!process.env.TOGETHER_API_KEY
     }
   });
 });
@@ -56,7 +56,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode`);
 }); 
