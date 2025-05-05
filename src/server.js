@@ -3,7 +3,6 @@ const cors = require('cors');
 const http = require('http');
 const dotenv = require('dotenv');
 const chatRoutes = require('./routes/chat');
-const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -46,15 +45,6 @@ app.get('/health', (req, res) => {
     }
   });
 });
-
-// Serve static files in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../../frontend/dist')));
-  
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
-  });
-}
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
